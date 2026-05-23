@@ -12,5 +12,5 @@ This repository contains **only a portion of the source code** from *Goety Integ
 The code is shared solely for educational and reference purposes, to help other modders learn from some of the systems built in GINT.
 
 > ⚠️ The full *Goety Integration* mod is released under **All Rights Reserved**.  
-> Official downloads are available on [Modrinth](https://modrinth.com/mod/gint).  
+> Official downloads are available on [Modrinth](https://modrinth.com/mod/goety-integration) or [CurseForge](https://www.curseforge.com/minecraft/mc-mods/goety-integration).  
 > This repository does **not** include the mod's art, sounds, localisation, or all of its functional code.
