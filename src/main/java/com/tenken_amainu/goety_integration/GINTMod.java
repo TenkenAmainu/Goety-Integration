@@ -437,16 +437,16 @@ public class GINTMod {
     public static final RegistryObject<EntityType<CustomEarthQuakeEntity>> CUSTOM_EARTHQUAKE =
             ENTITY_TYPES.register("custom_earthquake",
                     () -> EntityType.Builder.<CustomEarthQuakeEntity>of(CustomEarthQuakeEntity::new, MobCategory.MISC)
-                            .sized(0.5F, 0.5F) // 碰撞箱尺寸
-                            .clientTrackingRange(4) // 客户端追踪范围
-                            .updateInterval(10) // 更新间隔
-                            .build("custom_earthquake") // 构建实体，参数为注册名
+                            .sized(0.5F, 0.5F)
+                            .clientTrackingRange(4)
+                            .updateInterval(10)
+                            .build("custom_earthquake")
             );
 
     public static final RegistryObject<EntityType<EntityBurningHoglinLord>> BURNING_HOGLIN_LORD =
             ENTITY_TYPES.register("burning_hoglin_lord",
                     () -> EntityType.Builder.of(EntityBurningHoglinLord::new, MobCategory.MONSTER)
-                            .sized(2.25F, 2.10F) // 碰撞箱尺寸（缩放后）
+                            .sized(2.25F, 2.10F)
                             .fireImmune()
                             .build("burning_hoglin_lord"));
 
@@ -503,7 +503,7 @@ public class GINTMod {
     public static final RegistryObject<MenuType<PatchouliFocusMenu>> PATCHOULI_FOCUS_MENU =
             MENU_TYPES.register("patchouli_focus", () -> IForgeMenuType.create(PatchouliFocusMenu::new));
 
-    // ========== 创造模式标签页 ==========
+    // ========== 创造页 ==========
     public static final RegistryObject<CreativeModeTab> GINT_TAB = TABS.register("goety_integration_tab",
             () -> CreativeModeTab.builder()
                     .title(Component.literal("Goety Integration"))
@@ -603,9 +603,8 @@ public class GINTMod {
         SOUND_EVENTS.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::registerAttributes);
-        // 注意：客户端相关监听器已移除，转移到 GINT_CMod
         MinecraftForge.EVENT_BUS.register(this);
-        MinecraftForge.EVENT_BUS.register(new TargetSelectionHandler()); // 注册新的事件监听d
+        MinecraftForge.EVENT_BUS.register(new TargetSelectionHandler());
         MinecraftForge.EVENT_BUS.register(SpellerRobeEvents.class);
         MinecraftForge.EVENT_BUS.register(MagiBrainEvents.class);
         MinecraftForge.EVENT_BUS.register(CurioAttributeEvents.class);
@@ -716,7 +715,7 @@ public class GINTMod {
         WarpedSpearEntity.PLAYER_LOGOUT_POSITIONS.put(event.getEntity().getUUID(), event.getEntity().position());
     }
 
-    // ========== 其他原有方法 ==========
+    // ========== 其他方法 ==========
     @SubscribeEvent
     public void onAddReloadListeners(AddReloadListenerEvent event) {
         event.addListener(new WiccaRecipeLoader());
