@@ -12,7 +12,7 @@ import net.minecraftforge.fml.common.Mod;
 public class GINT_CModForgeEvents {
     @SubscribeEvent
     public static void onKeyInput(InputEvent.Key event) {
-        // 使用 Goety 的女巫长袍键（索引 3）
+        // 使用 Goety 的女巫长袍键
         if (ModKeybindings.keyBindings.length > 3 && ModKeybindings.keyBindings[3] != null) {
             if (ModKeybindings.keyBindings[3].consumeClick()) {
                 OracleNetwork.CHANNEL.sendToServer(new OpenBrewingPacket());
